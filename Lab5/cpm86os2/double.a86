@@ -1,0 +1,77 @@
+	CESG				; CODE segment
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char1			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char2			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char3			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char4			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char5			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char6			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char7			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char8			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char9			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char10			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, readchar		; BIOS Call CONIN
+	int 224			; Interrupt E0h
+	
+	sub al, '0'
+	add al, al
+	add al, '0'
+	
+	mov bx, 1
+	mov writechar[bx], al
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, writechar		; BIOS Call CONIN
+	int 224			; Interrupt E0h
+
+	mov cl, 00h			; BDOS function P_TERMCPM
+	int 224			; Interrupt E0h
+	
+	DSEG				; DATA segment
+	org 100h			; Code offset 100h
+	char1 db 4h, 'E', 0, 0, 0	; BIOS Call - Console Out E
+	char2 db 4h, 'n', 0, 0, 0	; BIOS Call - Console Out n
+	char3 db 4h, 't', 0, 0, 0	; BIOS Call - Console Out t
+	char4 db 4h, 'e', 0, 0, 0	; BIOS Call - Console Out e
+	char5 db 4h, 'r', 0, 0, 0	; BIOS Call - Console Out r
+	char6 db 4h, ' ', 0, 0, 0	; BIOS Call - Console Out Space
+	char7 db 4h, '0', 0, 0, 0	; BIOS Call - Console Out 0
+	char8 db 4h, '-', 0, 0, 0	; BIOS Call - Console Out -
+	char9 db 4h, '4', 0, 0, 0	; BIOS Call - Console Out 4
+	char10 db 4h, ':', 0, 0, 0	; BIOS Call - Console Out :
+	char11 db 4h, ' ', 0, 0, 0	; BIOS Call - Console Out Space
+	
+	readchar db 3h,0,0,0,0		; BIOS Call - Console IN (CONIN)
+	writechar db 4h,0,0,0,0	; BIOS Call - Console Out (CONOUT)	
+
+    	end                            ; End of DATA segment

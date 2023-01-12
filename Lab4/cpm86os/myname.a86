@@ -1,0 +1,33 @@
+; Hello World ASM86 example for CP/M-86
+
+; This example will print the string "Hi BDOS" on the screen.
+
+
+; Code Segment
+
+    CSEG                           ; CODE segment
+
+; Make a System call to print msg
+
+    mov    cl, 09h                 ; Copy the BDOS System Call Number 09h
+                                   ; to register cl 
+                                   ; BDOS System Call 09h is C_WRITESTR
+    lea    dx,msg                  ; Copy the address of the string at msg
+                                   ; to register dx.
+    int    224                     ; Make a System Call with Interrupt E0h
+
+; Make a System call to Terminate the Program    
+
+    mov    cl, 00h                 ; Copy the BDOS System Call Number 00h
+                                   ; to register cl
+                                   ; BDOS System Call 00h is P_TERMCPM
+    int    224                     ; Interrupt E0h
+
+; Data Segment
+
+    DSEG                           ; DATA segment
+    org    100h                    ; Code offset 100h
+    msg    db      'Nam Jonghyeon!$'     ; Define the string "msg"
+    end                            ; End of DATA segment
+
+

@@ -1,0 +1,79 @@
+; hiBIOS.a86			written by Nam Jonghyeon
+; Print "Hi BIOS!" using BIOS Calls in CP/M-86.
+
+;This example will print theh string "Hi BIOS!" on the screen.
+
+	CESG				; CODE segment
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char1			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char2			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char3			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char4			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char5			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char6			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char7			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char8			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char9			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char10			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char11			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char12			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char13			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 00h			; BDOS function P_TERMCPM
+	int 224			; Interrupt E0h
+	
+	DSEG				; DATA segment
+	org 100h			; Code offset 100h
+	char1 db 4h, 'N', 0, 0, 0	; BIOS Call - Console Out N
+	char2 db 4h, 'a', 0, 0, 0	; BIOS Call - Console Out a
+	char3 db 4h, 'm', 0, 0, 0	; BIOS Call - Console Out m
+	char4 db 4h, ' ', 0, 0, 0	; BIOS Call - Console Out Space
+	char5 db 4h, 'J', 0, 0, 0	; BIOS Call - Console Out J
+	char6 db 4h, 'o', 0, 0, 0	; BIOS Call - Console Out o
+	char7 db 4h, 'n', 0, 0, 0	; BIOS Call - Console Out n
+	char8 db 4h, 'g', 0, 0, 0	; BIOS Call - Console Out g
+	char9 db 4h, 'h', 0, 0, 0	; BIOS Call - Console Out h
+	char10 db 4h, 'y', 0, 0, 0	; BIOS Call - Console Out y
+	char11 db 4h, 'e', 0, 0, 0	; BIOS Call - Console Out e
+	char12 db 4h, 'o', 0, 0, 0	; BIOS Call - Console Out o
+	char13 db 4h, 'n', 0, 0, 0	; BIOS Call - Console Out n	
+    	end                            ; End of DATA segment
+
+

@@ -1,0 +1,54 @@
+; hiBIOS.a86			written by Nam Jonghyeon
+; Print "Hi BIOS!" using BIOS Calls in CP/M-86.
+
+;This example will print theh string "Hi BIOS!" on the screen.
+
+	CESG				; CODE segment
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char1			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char2			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char3			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char4			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char5			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char6			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char7			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 32h			; BDOS function DIRECT BIOS CALL
+	lea dx, char8			; BIOS Call CONOUT
+	int 224			; Interrupt E0h
+	
+	mov cl, 00h			; BDOS function P_TERMCPM
+	int 224			; Interrupt E0h
+	
+	DSEG				; DATA segment
+	org 100h			; Code offset 100h
+	char1 db 4h, 'H', 0, 0, 0	; BIOS Call - Console Out H
+	char2 db 4h, 'i', 0, 0, 0	; BIOS Call - Console Out i
+	char3 db 4h, ' ', 0, 0, 0	; BIOS Call - Console Out Space
+	char4 db 4h, 'B', 0, 0, 0	; BIOS Call - Console Out B
+	char5 db 4h, 'I', 0, 0, 0	; BIOS Call - Console Out I
+	char6 db 4h, 'O', 0, 0, 0	; BIOS Call - Console Out O
+	char7 db 4h, 'S', 0, 0, 0	; BIOS Call - Console Out S
+	char8 db 4h, '!', 0, 0, 0	; BIOS Call - Console Out !	
+    	end                            ; End of DATA segment
+
+

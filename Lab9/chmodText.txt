@@ -1,0 +1,8 @@
+-rwxrw-r-- 1 oslab oslab     0  5월  6 16:49 test1.txt 
+Explain: Original Permission was "-rw-rw-r--", Changed Permission is "-rwxrw-r--" -> adding a "Execute Permission" to User
+
+-rw-rw---- 1 oslab oslab     0  5월  6 16:49 test2.txt
+Explain: Original Permission was "-rw-rw-r--", Changed Permission is "-rw-rw----" -> removing a "Read Permission" to Other
+
+-rw-r--r-- 1 oslab oslab     0  5월  6 16:49 test3.txt
+Explain: Original Permission was "-rw-rw-r--", Changed Permission is "-rw-r--r--" -> removing a "Write Permission" to Group
