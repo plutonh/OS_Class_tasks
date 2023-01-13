@@ -3,7 +3,7 @@
 
 ## Period
 
-- In 2022, the first semester of the second grade
+- In 2022, the first semester of the third grade
 
 ## Contents
 
