@@ -7,4 +7,4 @@
 
 ## Contents
 
-- Projects using **Ubuntu** and **assembly language** in **Operating System** class
+- Projects using **Ubuntu** and **Assembly Language** in **Operating System** class
